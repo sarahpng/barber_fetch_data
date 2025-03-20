@@ -39,13 +39,13 @@ class _BarberViewState extends State<BarberView> {
                             image: DecorationImage(
                               image: NetworkImage(
                                   controller.barber.value!.profilePic),
-                              fit: BoxFit.cover,
+                              fit: BoxFit.fill,
                             ),
                           ),
                         ),
                         Container(
                           height: 100,
-                          color: Colors.black.withOpacity(0.4),
+                          color: Colors.black.withValues(alpha: 0.1),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 10),
@@ -102,6 +102,26 @@ class _BarberViewState extends State<BarberView> {
                           ),
                         ),
                       ],
+                    ),
+                    DefaultTabController(
+                      length: 3,
+                      child: TabBar(
+                        tabs: [
+                          Tab(icon: Icon(Icons.directions_car)),
+                          Tab(icon: Icon(Icons.directions_transit)),
+                          Tab(icon: Icon(Icons.directions_bike)),
+                        ],
+                        dividerColor: Colors.transparent,
+                        indicatorWeight: 1.0,
+                        indicatorSize: TabBarIndicatorSize.label,
+                        indicatorPadding: EdgeInsets.only(top: 40),
+                        indicatorColor: Colors.red,
+                        indicator: BoxDecoration(
+                          color: Colors.red,
+                          // borderRadius: BorderRadius.circular(1),
+                          shape: BoxShape.circle,
+                        ),
+                      ),
                     ),
                   ],
                 );
