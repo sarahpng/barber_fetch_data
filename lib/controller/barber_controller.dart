@@ -69,6 +69,8 @@ class BarberController extends GetxController {
             '${barber.value?.userAvailability?.availableDays?.fri?.first.day}');
         print(
             '${barber.value?.userAvailability?.availableDays?.fri?.first.day}');
+        print(
+            '${barber.value?.userAvailability?.availableDays?.fri?.first.day}');
       }
 
       ///Else to know what's wrong
