@@ -47,30 +47,26 @@ class BarberController extends GetxController {
 
   Future<void> fetchBarber() async {
     try {
-      print("The url is: ${Constant.baseUrl}/api/v2/user/barbers?barberId=19");
-      print("The url is: ${Constant.baseUrl}/api/v2/user/barbers?barberId=19");
+      // print("The url is: ${Constant.baseUrl}/api/v2/user/barbers?barberId=19");
+      // print("The url is: ${Constant.baseUrl}/api/v2/user/barbers?barberId=19");
 
       ///Starting here, base url should just save the base url, (the part of api url that's common for all)
       ///
       final response = await http.get(
           Uri.parse('${Constant.baseUrl}/api/v2/user/barbers?barberId=19'));
 
-      print("The response is: ${response.body}");
+      // print("The response is: ${response.body}");
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body) as Map<String, dynamic>;
         barber.value = BarberModel.fromJson(data['barber']);
-        print(barber.value?.barberServices?.first.categoryIcon);
-        print("The barber name is ${barber.value?.name}");
-        print(
-            "The barber name is ${barber.value?.barberServices?.first.categoryName}");
-        print(
-            "The barber name is ${barber.value?.barberServices?.first.price}");
-        print(
-            '${barber.value?.userAvailability?.availableDays?.fri?.first.day}');
-        print(
-            '${barber.value?.userAvailability?.availableDays?.fri?.first.day}');
-        print(
-            '${barber.value?.userAvailability?.availableDays?.fri?.first.day}');
+        // print(barber.value?.barberServices?.first.categoryIcon);
+        // print("The barber name is ${barber.value?.name}");
+        // print(
+        //     "The barber name is ${barber.value?.barberServices?.first.categoryName}");
+        // print(
+        //     "The barber name is ${barber.value?.barberServices?.first.price}");
+        // print(
+        // '${barber.value?.userAvailability?.availableDays?.fri?.first.day}');
       }
 
       ///Else to know what's wrong
